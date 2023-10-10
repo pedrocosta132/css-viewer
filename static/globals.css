@@ -28,6 +28,10 @@ body {
     background-color: var(--background);
 }
 
+p {
+    margin: 0;
+}
+
 a {
     color: var(--text);
     text-decoration: inherit;
