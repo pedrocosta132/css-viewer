@@ -1,70 +1,75 @@
 <script>
     import ControlCard from "../../components/ControlCard.svelte";
+    import PageLayout from "../../components/PageLayout.svelte";
 
     let direction = "row";
     let justifyContent = "space-around";
     let alignItems = "center";
     let gap = "0";
+    let flexGrow = "0";
 </script>
 
-<section>
-    <h1>CSS: Flexbox</h1>
-    <div class="preview" style="flex-direction:{direction};justify-content:{justifyContent};align-items:{alignItems};gap:{gap};">
-        <span class="item" />
-        <span class="item" />
-        <span class="item" />
-    </div>
-    <div class="controls">
+<PageLayout title="CSS: Flexbox" controlsTitle="Flex Properties">
+    <svelte:fragment slot="preview">
+        <div
+            class="preview"
+            style="flex-direction:{direction};justify-content:{justifyContent};align-items:{alignItems};gap:{gap};"
+        >
+            <span class="item" style="flex-grow:{flexGrow};" />
+            <span class="item" style="flex-grow:{flexGrow};" />
+            <span class="item" style="flex-grow:{flexGrow};" />
+        </div>
+    </svelte:fragment>
+    <svelte:fragment slot="controls">
         <ControlCard
-            title="flex-direction" 
+            title="flex-direction"
             options={[
-                {name: 'row', value: 'row'},
-                {name: 'column', value: 'column'},
+                { name: "row", value: "row" },
+                { name: "column", value: "column" },
             ]}
             bind:value={direction}
         />
         <ControlCard
-            title="justify-content" 
+            title="justify-content"
             options={[
-                {name: 'start', value: 'flex-start'},
-                {name: 'center', value: 'center'},
-                {name: 'end', value: 'flex-end'},
-                {name: 'space between', value: 'space-between'},
-                {name: 'space around', value: 'space-around'},
+                { name: "start", value: "flex-start" },
+                { name: "center", value: "center" },
+                { name: "end", value: "flex-end" },
+                { name: "space between", value: "space-between" },
+                { name: "space around", value: "space-around" },
+                { name: "space evenly", value: "space-evenly" },
             ]}
             bind:value={justifyContent}
         />
         <ControlCard
-            title="align-items" 
+            title="align-items"
             options={[
-                {name: 'start', value: 'flex-start'},
-                {name: 'center', value: 'center'},
-                {name: 'end', value: 'flex-end'},
+                { name: "start", value: "flex-start" },
+                { name: "center", value: "center" },
+                { name: "end", value: "flex-end" },
             ]}
             bind:value={alignItems}
         />
         <ControlCard
-            title="gap" 
+            title="flex-grow"
             options={[
-                {name: 'no', value: '0'},
-                {name: 'yes', value: '16px'},
+                { name: "0", value: "0" },
+                { name: "1", value: "1" },
+            ]}
+            bind:value={flexGrow}
+        />
+        <ControlCard
+            title="gap"
+            options={[
+                { name: "no", value: "0" },
+                { name: "yes", value: "16px" },
             ]}
             bind:value={gap}
         />
-    </div>
-</section>
-
+    </svelte:fragment>
+</PageLayout>
 
 <style>
-    section {
-        width: 100%;
-        max-width: 1024px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-    }
     .preview {
         width: 100%;
         max-width: 764px;
@@ -79,17 +84,5 @@
         height: 50px;
         border-radius: 8px;
         background-color: var(--accent);
-    }
-    .controls {
-        width: 100%;
-        margin-top: 48px;
-        display: grid;
-        grid-template-columns: 1fr;
-        justify-items: center;
-        gap: 1rem;
-
-        @media screen and (min-width: 768px) {
-            grid-template-columns: 1fr 1fr 1fr;
-        }
     }
 </style>
