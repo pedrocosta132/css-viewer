@@ -5,15 +5,15 @@
     let direction = "row";
     let justifyContent = "space-around";
     let alignItems = "center";
-    let gap = "0";
-    let flexGrow = "0";
+    let gap = 0;
+    let flexGrow = 0;
 </script>
 
 <PageLayout title="CSS: Flexbox" controlsTitle="Flex Properties">
     <svelte:fragment slot="preview">
         <div
             class="preview"
-            style="flex-direction:{direction};justify-content:{justifyContent};align-items:{alignItems};gap:{gap};"
+            style="flex-direction:{direction};justify-content:{justifyContent};align-items:{alignItems};gap:{gap}px;"
         >
             <span class="item" style="flex-grow:{flexGrow};" />
             <span class="item" style="flex-grow:{flexGrow};" />
@@ -53,16 +53,16 @@
         <ControlCard
             title="flex-grow"
             options={[
-                { name: "0", value: "0" },
-                { name: "1", value: "1" },
+                { name: "0", value: 0 },
+                { name: "1", value: 1 },
             ]}
             bind:value={flexGrow}
         />
         <ControlCard
             title="gap"
             options={[
-                { name: "no", value: "0" },
-                { name: "yes", value: "16px" },
+                { name: "no", value: 0 },
+                { name: "yes", value: 16 },
             ]}
             bind:value={gap}
         />

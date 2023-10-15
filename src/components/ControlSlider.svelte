@@ -2,6 +2,7 @@
     export let value = 0;
     export let min = -10;
     export let max = 10;
+    export let step = 1;
 
     const handleChangeValue = (e) => {
         value = e.target.value;
@@ -14,6 +15,7 @@
         type="range" 
         min={min}
         max={max}
+        step={step}
         value={value}
         on:change|preventDefault={handleChangeValue} 
     />

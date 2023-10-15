@@ -7,7 +7,7 @@
     let positionY = 20;
     let blur = 10;
     let spread = 0;
-    let opacity = 100;
+    let opacity = 1;
 </script>
 
 <PageLayout title="CSS: Box-shadow">
@@ -15,7 +15,7 @@
         <div class="preview">
             <span
                 class="item"
-                style={`box-shadow: rgba(0,0,0,${opacity / 100}) ${inset ? "inset" : ""} ${positionX}px ${positionY}px ${blur}px ${spread}px`}
+                style={`box-shadow: rgba(0,0,0,${opacity}) ${inset ? "inset" : ""} ${positionX}px ${positionY}px ${blur}px ${spread}px`}
             />
         </div>
     </svelte:fragment>
@@ -24,8 +24,8 @@
             title="Position X"
             type="slider"
             options={{
-                min: "-150",
-                max: "150",
+                min: -150,
+                max: 150,
             }}
             bind:value={positionX}
         />
@@ -33,8 +33,8 @@
             title="Position Y"
             type="slider"
             options={{
-                min: "-150",
-                max: "150",
+                min: -150,
+                max: 150,
             }}
             bind:value={positionY}
         />
@@ -42,8 +42,8 @@
             title="Blur"
             type="slider"
             options={{
-                min: "0",
-                max: "150",
+                min: 0,
+                max: 150,
             }}
             bind:value={blur}
         />
@@ -51,8 +51,8 @@
             title="Spread"
             type="slider"
             options={{
-                min: "0",
-                max: "150",
+                min: 0,
+                max: 150,
             }}
             bind:value={spread}
         />
@@ -60,8 +60,9 @@
             title="Opacity"
             type="slider"
             options={{
-                min: "0",
-                max: "100",
+                min: 0,
+                max: 1,
+                step: 0.05
             }}
             bind:value={opacity}
         />
