@@ -18,6 +18,7 @@
         background-color: var(--mute);
         text-transform: capitalize;
         cursor: pointer;
+        transition: 200ms;
 
         &.active {
             color: var(--background);

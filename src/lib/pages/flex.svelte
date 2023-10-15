@@ -72,8 +72,7 @@
 <style>
     .preview {
         width: 100%;
-        max-width: 764px;
-        height: 300px;
+        min-height: 250px;
         display: flex;
         border-radius: 8px;
         background-color: var(--secondary);

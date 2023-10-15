@@ -29,18 +29,9 @@
 <style>
     .card {
         width: 100%;
-        max-width: 330px;
-        padding: 16px;
         display: flex;
         flex-direction: column;
-        gap: 16px;
-        border: 1px solid var(--secondary);
-        border-radius: 8px;
-        transition: 300ms;
-
-        &:hover {
-            border: 1px solid var(--primary);
-        }
+        gap: 8px;
     }
     p {
         text-transform: uppercase;
