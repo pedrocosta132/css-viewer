@@ -7,6 +7,7 @@
     let positionY = 20;
     let blur = 10;
     let spread = 0;
+    let opacity = 100;
 </script>
 
 <PageLayout title="CSS: Box-shadow">
@@ -14,7 +15,7 @@
         <div class="preview">
             <span
                 class="item"
-                style={`box-shadow:${inset ? "inset" : ""} ${positionX}px ${positionY}px ${blur}px ${spread}px`}
+                style={`box-shadow: rgba(0,0,0,${opacity / 100}) ${inset ? "inset" : ""} ${positionX}px ${positionY}px ${blur}px ${spread}px`}
             />
         </div>
     </svelte:fragment>
@@ -54,6 +55,15 @@
                 max: "150",
             }}
             bind:value={spread}
+        />
+        <ControlCard
+            title="Opacity"
+            type="slider"
+            options={{
+                min: "0",
+                max: "100",
+            }}
+            bind:value={opacity}
         />
         <ControlCard
             title="inset"
