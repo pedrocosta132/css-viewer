@@ -1,11 +1,10 @@
 <script>
     import ControlButton from "$components/ControlButton.svelte";
+    import ControlSlider from "./ControlSlider.svelte";
 
     export let title = "Title";
-    export let options = [
-        { name: "Option 1", value: "option1" },
-        { name: "Option 2", value: "option2" },
-    ];
+    export let type = "select";
+    export let options = null;
     export let value = "option1";
 
     const handleChangeValue = (newValue) => {
@@ -16,13 +15,22 @@
 <div class="card">
     <p>{title}</p>
     <div class="controls">
-        {#each options as option}
-            <ControlButton
-                text={option.name}
-                isActive={option.value === value}
-                onClick={() => handleChangeValue(option.value)}
+
+        {#if type === 'select'}    
+            {#each options as option}
+                <ControlButton
+                    text={option.name}
+                    isActive={option.value === value}
+                    onClick={() => handleChangeValue(option.value)}
+                />
+            {/each}
+        {:else if type === 'slider'}
+            <ControlSlider 
+                {...options}
+                bind:value={value}
             />
-        {/each}
+        {/if}
+
     </div>
 </div>
 

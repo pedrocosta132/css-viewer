@@ -8,11 +8,13 @@
     export let justifyContent = 'center';
     export let alignItems = 'center';
     export let gap = '1rem';
+    export let styleItem = null;
+    export let styleIllustration = null;
 </script>
 
-<div class="illustration" style="width: {width};height: {height};background-color: {bgColor};justify-content: {justifyContent};align-items: {alignItems};gap: {gap};">
+<div class="illustration" style="width: {width};height: {height};background-color: {bgColor};justify-content: {justifyContent};align-items: {alignItems};gap: {gap};{styleIllustration ? styleIllustration : ''}">
     {#each Array(itemX) as _, index (index)}
-		<span style="background-color: {itemColor};width: {itemSize};height: {itemSize};"/>
+		<span style="background-color: {itemColor};width: {itemSize};height: {itemSize};{styleItem ? styleItem : ''}"/>
 	{/each}
 </div>
 

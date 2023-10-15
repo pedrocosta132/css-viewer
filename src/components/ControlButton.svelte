@@ -12,6 +12,7 @@
 
 <style>
     button {
+        min-width: 50px;
         padding: 8px 16px;
         border: 0;
         border-radius: 100px;

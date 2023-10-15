@@ -13,12 +13,12 @@
         <PageCard title="flex" to="/flex" animationDelay="700ms">
             <FlexIllustration slot="illustration" width="150px" height="100px" itemSize="20px"/>
         </PageCard>
-        <PageCard title="flex" to="/flex" animationDelay="900ms">
-            <FlexIllustration slot="illustration" width="150px" height="100px" itemSize="20px"/>
+        <PageCard title="box-shadow" to="/box-shadow" animationDelay="900ms">
+            <FlexIllustration slot="illustration" width="150px" height="100px" itemSize="30px" itemX="1" styleItem="box-shadow: rgba(0,0,0,0.5)5px 5px 2px 2px;"/>
         </PageCard>
-        <PageCard title="flex" to="/flex" animationDelay="1100ms">
+        <!-- <PageCard title="flex" to="/flex" animationDelay="1100ms">
             <FlexIllustration slot="illustration" width="150px" height="100px" itemSize="20px"/>
-        </PageCard>
+        </PageCard> -->
     </div>
 </div>
 <div class="buttons">
